@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loading">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.auction.login.login_fragment"
+        android:label="fragment_login_fragment"
+        tools:layout="@layout/fragment_login_fragment" >
+        <action
+            android:id="@+id/action_login_fragment_to_signup_page"
+            app:destination="@id/signup_page" />
+        <action
+            android:id="@+id/action_login_fragment_to_forgot_password"
+            app:destination="@id/forgot_password" />
+        <action
+            android:id="@+id/action_login_fragment_to_loading"
+            app:destination="@id/loading"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_page"
+        android:name="com.example.auction.login.signup_page"
+        android:label="fragment_signup_page"
+        tools:layout="@layout/fragment_signup_page" >
+        <action
+            android:id="@+id/action_signup_page_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.auction.dashboard.dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_room_page"
+            app:destination="@id/room_page" />
+        <action
+            android:id="@+id/action_dashboard_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/dashboard"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_dashboard_to_public_rooms"
+            app:destination="@id/public_rooms" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgot_password"
+        android:name="com.example.auction.login.forgot_password"
+        android:label="forgot_password" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_forgot_password_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/room_page"
+        android:name="com.example.auction.dashboard.room_page"
+        android:label="fragment_room_page"
+        tools:layout="@layout/fragment_room_page" >
+        <argument
+            android:name="room_type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_room_page_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/dashboard"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_room_page_to_game_page"
+            app:destination="@id/game_page"
+            app:popUpTo="@id/dashboard"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/game_page"
+        android:name="com.example.auction.game.game_page"
+        android:label="fragment_game_page"
+        tools:layout="@layout/fragment_game_page" >
+        <action
+            android:id="@+id/action_game_page_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/game_page"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loading"
+        android:name="com.example.auction.loading"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loading_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/loading"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_loading_to_dashboard"
+            app:destination="@id/dashboard"
+            app:popUpTo="@id/loading"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/public_rooms"
+        android:name="com.example.auction.dashboard.public_rooms"
+        android:label="fragment_public_rooms"
+        tools:layout="@layout/fragment_public_rooms" >
+        <action
+            android:id="@+id/action_public_rooms_to_room_page"
+            app:destination="@id/room_page"
+            app:popUpTo="@id/public_rooms"
+            app:popUpToInclusive="true" />
+        <argument android:name="room_det"
+            app:argType="string" />
+    </fragment>
+</navigation>

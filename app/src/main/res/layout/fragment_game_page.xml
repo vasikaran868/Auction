@@ -1,0 +1,1866 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_page_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackcurrent"
+    tools:context=".game.game_page">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/player_info_cardview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@color/dark_blue"
+        app:layout_constraintWidth_percent=".35"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/player_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="player number: 0"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:background="@drawable/purple_gold_gradient"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/player_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/person"
+                android:layout_margin="3dp"
+                app:layout_constraintHeight_percent=".60"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/player_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/player_image2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/person"
+                android:layout_margin="3dp"
+                app:layout_constraintHeight_percent=".60"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/player_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/player_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_image"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="category"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_name"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_base_price_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="base price"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:background="@color/blackcurrent"
+                app:layout_constraintStart_toStartOf="@+id/player_category"
+                app:layout_constraintTop_toBottomOf="@+id/player_category"
+                app:layout_constraintWidth_percent="0.40" />
+
+            <TextView
+                android:id="@+id/player_base_price"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="0.0 c"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player_base_price_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player_base_price_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player_base_price_heading"
+                app:layout_constraintWidth_percent="0.40" />
+
+            <TextView
+                android:id="@+id/player_points_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="points"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_margin="3dp"
+                android:background="@color/blackcurrent"
+                app:layout_constraintEnd_toEndOf="@+id/player_category"
+                app:layout_constraintTop_toBottomOf="@+id/player_category"
+                app:layout_constraintWidth_percent="0.40" />
+
+            <TextView
+                android:id="@+id/player_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:textSize="36sp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/player_category"
+                app:layout_constraintTop_toBottomOf="@+id/player_points_heading"
+                app:layout_constraintWidth_percent="0.4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bid_points_timer_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_info_cardview"
+        app:layout_constraintHeight_percent=".20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/current_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:text="current bid"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/points_heading"
+                app:layout_constraintWidth_percent=".2"/>
+
+            <TextView
+                android:id="@+id/current_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintStart_toStartOf="@+id/current_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/current_bid_heading"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/current_bid_heading"
+                />
+
+            <TextView
+                android:id="@+id/points_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="total points"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toEndOf="@id/current_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/balance_heading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".20" />
+
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:textAlignment="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="@+id/points_heading"
+                app:layout_constraintEnd_toEndOf="@+id/points_heading"
+                app:layout_constraintTop_toBottomOf="@+id/points_heading"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/balance_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="total balance"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintEnd_toStartOf="@+id/timer_heading"
+                app:layout_constraintStart_toEndOf="@id/points_heading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".20" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:textAlignment="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="@+id/balance_heading"
+                app:layout_constraintTop_toBottomOf="@+id/balance_heading"
+                app:layout_constraintEnd_toEndOf="@+id/balance_heading"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/timer_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="timer"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/balance_heading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".20" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="@id/timer_heading"
+                app:layout_constraintTop_toBottomOf="@+id/timer_heading"
+                app:layout_constraintStart_toStartOf="@id/timer_heading"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/current_bidder_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_info_cardview"
+        app:layout_constraintHeight_percent=".15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/player1_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player1_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player1_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player1_bid_heading"
+                />
+
+            <TextView
+                android:id="@+id/player1_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 1"
+                android:visibility="invisible"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:layout_margin="2dp"
+                android:background="@drawable/purple_gold_gradient"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/player2_bid_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player2_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player2_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player2_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player2_bid_heading" />
+
+            <TextView
+                android:id="@+id/player2_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 2"
+                android:visibility="invisible"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:layout_margin="2dp"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/player3_bid_heading"
+                app:layout_constraintStart_toEndOf="@+id/player1_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player3_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player3_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player3_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player3_bid_heading" />
+
+            <TextView
+                android:id="@+id/player3_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 3"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player2_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/player4_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player4_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player4_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player4_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player4_bid_heading" />
+
+            <TextView
+                android:id="@+id/player4_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 4"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player3_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/player5_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player5_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player5_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player5_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player5_bid_heading"/>
+
+            <TextView
+                android:id="@+id/player5_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 5"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player4_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/player6_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player6_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player6_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player6_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player6_bid_heading" />
+
+            <TextView
+                android:id="@+id/player6_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 6"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player5_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/player7_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player7_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player7_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player7_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player7_bid_heading" />
+
+            <TextView
+                android:id="@+id/player7_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 7"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player6_bid_heading"
+                app:layout_constraintEnd_toStartOf="@+id/player8_bid_heading"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/player8_bid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:src="@drawable/bidding_hand_image"
+                android:layout_margin="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/player8_bid_heading"
+                app:layout_constraintTop_toBottomOf="@+id/player8_bid_heading"
+                app:layout_constraintEnd_toEndOf="@+id/player8_bid_heading"/>
+
+            <TextView
+                android:id="@+id/player8_bid_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="player 8"
+                android:visibility="invisible"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/player7_bid_heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bid_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Bid"
+        android:textAlignment="center"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:background="@color/orange"
+        app:layout_constraintWidth_percent=".15"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/brought_panel"
+        app:layout_constraintTop_toBottomOf="@+id/bid_points_timer_panel" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/brought_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@color/dark_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/current_bidder_panel">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/brought_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="brought"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintBottom_toTopOf="@id/batsman_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/wicket_keeper_heading"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:id="@+id/batsman_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/4"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/bowler_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/batsman_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  batsman  "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/batsman_count"
+                app:layout_constraintBottom_toBottomOf="@+id/batsman_count"
+                app:layout_constraintEnd_toStartOf="@+id/batsman_count"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/bowler_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/4"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/allrounder_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/bowler_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  bowler  "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/bowler_count"
+                app:layout_constraintBottom_toBottomOf="@+id/bowler_count"
+                app:layout_constraintEnd_toStartOf="@+id/bowler_count"
+                android:layout_marginEnd="6dp"/>
+
+
+            <TextView
+                android:id="@+id/allrounder_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0/3"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/wicket_keeper_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/allrounder_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="  allrounder  "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/allrounder_count"
+                app:layout_constraintBottom_toBottomOf="@+id/allrounder_count"
+                app:layout_constraintEnd_toStartOf="@+id/allrounder_count"
+                android:layout_marginEnd="6dp"/>
+
+
+            <TextView
+                android:id="@+id/wicket_keeper_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0/2"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/foreigners_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/wicket_keeper_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" Wicket Keeper "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/wicket_keeper_count"
+                app:layout_constraintBottom_toBottomOf="@+id/wicket_keeper_count"
+                app:layout_constraintEnd_toStartOf="@+id/wicket_keeper_count"
+                android:layout_marginEnd="6dp"
+                android:layout_marginStart="6dp"/>
+
+            <TextView
+                android:id="@+id/foreigners_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0/5"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/indians_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+
+            <TextView
+                android:id="@+id/foreigners_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="  foreigners  "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/foreigners_count"
+                app:layout_constraintBottom_toBottomOf="@+id/foreigners_count"
+                app:layout_constraintEnd_toStartOf="@+id/foreigners_count"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/indians_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0/9"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/indians_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="  indian  "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@color/gradient_violet"
+                app:layout_constraintTop_toTopOf="@+id/indians_count"
+                app:layout_constraintBottom_toBottomOf="@+id/indians_count"
+                app:layout_constraintEnd_toStartOf="@+id/indians_count"
+                android:layout_marginEnd="6dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="POINTS TABLE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/purple_gold_gradient"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintStart_toStartOf="@id/points_table_panel"
+        app:layout_constraintEnd_toEndOf="@id/points_table_panel"
+        app:layout_constraintBottom_toTopOf="@id/points_table_panel"/>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/points_table_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/brought_panel"
+        app:layout_constraintBottom_toTopOf="@+id/current_bidder_panel"
+        app:layout_constraintStart_toEndOf="@+id/player_info_cardview"
+        app:layout_constraintEnd_toStartOf="@+id/brought_panel"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@color/dark_blue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/points_table_name_heading"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent=".65"
+                android:text="NAME"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/player_1_points_table"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/points_table_points_heading"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:text="POINTS"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/white"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/points_table_name_heading"
+                app:layout_constraintStart_toEndOf="@id/points_table_name_heading"
+                app:layout_constraintBottom_toBottomOf="@id/points_table_name_heading"
+                app:layout_constraintEnd_toStartOf="@+id/points_table_balance_heading"/>
+
+            <TextView
+                android:id="@+id/points_table_balance_heading"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="WALLET"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/points_table_points_heading"
+                app:layout_constraintStart_toEndOf="@id/points_table_points_heading"
+                app:layout_constraintBottom_toBottomOf="@id/points_table_points_heading"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_1_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintTop_toBottomOf="@+id/points_table_name_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/player_2_points_table"/>
+
+            <TextView
+                android:id="@+id/player_1_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_1_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_1_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_1_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_1_balance"/>
+
+            <TextView
+                android:id="@+id/player_1_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_1_points"
+                app:layout_constraintStart_toEndOf="@id/player_1_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_1_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_2_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_1_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_3_points_table"/>
+
+            <TextView
+                android:id="@+id/player_2_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_2_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_2_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_2_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_2_balance"/>
+
+            <TextView
+                android:id="@+id/player_2_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_2_points"
+                app:layout_constraintStart_toEndOf="@id/player_2_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_2_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_3_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_2_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_4_points_table"/>
+
+            <TextView
+                android:id="@+id/player_3_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_3_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_3_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_3_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_3_balance"/>
+
+            <TextView
+                android:id="@+id/player_3_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_3_points"
+                app:layout_constraintStart_toEndOf="@id/player_3_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_3_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_4_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_3_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_5_points_table"/>
+
+            <TextView
+                android:id="@+id/player_4_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_4_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_4_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_4_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_4_balance"/>
+
+            <TextView
+                android:id="@+id/player_4_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_4_points"
+                app:layout_constraintStart_toEndOf="@id/player_4_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_4_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_5_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_4_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_6_points_table"/>
+
+            <TextView
+                android:id="@+id/player_5_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_5_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_5_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_5_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_5_balance"/>
+
+            <TextView
+                android:id="@+id/player_5_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_5_points"
+                app:layout_constraintStart_toEndOf="@id/player_5_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_5_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_6_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_5_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_7_points_table"/>
+
+            <TextView
+                android:id="@+id/player_6_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_6_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_6_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_6_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_6_balance"/>
+
+            <TextView
+                android:id="@+id/player_6_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_6_points"
+                app:layout_constraintStart_toEndOf="@id/player_6_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_6_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_7_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_6_points_table"
+                app:layout_constraintBottom_toTopOf="@+id/player_8_points_table"/>
+
+            <TextView
+                android:id="@+id/player_7_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_7_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_7_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_7_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_7_balance"/>
+
+            <TextView
+                android:id="@+id/player_7_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_7_points"
+                app:layout_constraintStart_toEndOf="@id/player_7_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_7_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/player_8_points_table"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".65"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_7_points_table"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/player_8_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_8_points_table"
+                app:layout_constraintStart_toEndOf="@id/player_8_points_table"
+                app:layout_constraintBottom_toBottomOf="@id/player_8_points_table"
+                app:layout_constraintEnd_toStartOf="@+id/player_8_balance"/>
+
+            <TextView
+                android:id="@+id/player_8_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintWidth_percent=".15"
+                app:layout_constraintTop_toTopOf="@+id/player_8_points"
+                app:layout_constraintStart_toEndOf="@id/player_8_points"
+                app:layout_constraintBottom_toBottomOf="@id/player_8_points"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dark_bg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="20dp"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/starting_timer_layout"
+        android:background="@color/blackcurrent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".8"
+        android:elevation="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/starts_in_cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/dark_blue"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/keeper_rec_cardview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".35">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/starts_in_timer"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="3dp"
+                    android:textColor="@color/white"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/starts_in_heading"
+                    />
+
+                <TextView
+                    android:id="@+id/starts_in_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="6dp"
+                    android:text="The Auction Starts In:"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/starts_in_timer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/batsmen_rec_cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/bowler_rec_cardview"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="6dp"
+            android:backgroundTint="@color/dark_blue"
+            app:cardCornerRadius="8dp"
+            android:elevation="25dp"
+            app:layout_constraintHeight_percent=".85">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/rec_batsmen_headin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Batsmen"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:background="@drawable/purple_gold_gradient"
+                    android:layout_margin="3dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_batsmen"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rec_batsmen_headin"
+                    app:layout_constraintStart_toStartOf="@+id/rec_batsmen_headin"
+                    app:layout_constraintTop_toBottomOf="@+id/rec_batsmen_headin" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bowler_rec_cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/batsmen_rec_cardview"
+            app:layout_constraintEnd_toStartOf="@id/allrounder_rec_cardview"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="6dp"
+            android:backgroundTint="@color/dark_blue"
+            app:cardCornerRadius="8dp"
+            android:elevation="25dp"
+            app:layout_constraintHeight_percent=".85">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/rec_bowler_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Bowlers"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/purple_gold_gradient"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_bowler"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rec_bowler_heading"
+                    app:layout_constraintStart_toStartOf="@+id/rec_bowler_heading"
+                    app:layout_constraintTop_toBottomOf="@+id/rec_bowler_heading" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/allrounder_rec_cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bowler_rec_cardview"
+            app:layout_constraintEnd_toStartOf="@+id/keeper_rec_cardview"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="6dp"
+            android:backgroundTint="@color/dark_blue"
+            app:cardCornerRadius="8dp"
+            android:elevation="25dp"
+            app:layout_constraintHeight_percent=".85">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/rec_allrounder_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Allrounder"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/purple_gold_gradient"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_allrounder"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rec_allrounder_heading"
+                    app:layout_constraintStart_toStartOf="@+id/rec_allrounder_heading"
+                    app:layout_constraintTop_toBottomOf="@+id/rec_allrounder_heading" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/keeper_rec_cardview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/allrounder_rec_cardview"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginEnd="6dp"
+            android:backgroundTint="@color/dark_blue"
+            app:cardCornerRadius="8dp"
+            android:elevation="25dp"
+            app:layout_constraintHeight_percent=".85">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/rec_wicket_keeper_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Wicketkeeper"
+                    android:layout_margin="3dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:background="@drawable/purple_gold_gradient"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_wicket_keeper"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rec_wicket_keeper_heading"
+                    app:layout_constraintStart_toStartOf="@+id/rec_wicket_keeper_heading"
+                    app:layout_constraintTop_toBottomOf="@+id/rec_wicket_keeper_heading" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="close"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/game_over_layout"
+        android:background="@color/blackcurrent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".8"
+        android:elevation="25dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/game_over_tv_panel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="@color/dark_blue"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/game_over_room_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Room no."
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent=".7"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="  GAME OVER  "
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/purple_gold_gradient"
+                    />
+
+                <Button
+                    android:id="@+id/game_over_exit"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent=".6"
+                    app:layout_constraintWidth_percent=".2"
+                    android:text=" EXIT "
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/white"
+                    android:background="@drawable/purple_gold_gradient"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/game_over_table_panel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_over_tv_panel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="8dp"
+            android:elevation="40dp"
+            android:backgroundTint="@color/dark_blue"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/gam_ov_points_table_name_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent=".65"
+                    android:text="NAME"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_1_points_table"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_points_table_points_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:text="POINTS"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/white"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_points_table_name_heading"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_points_table_name_heading"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_points_table_name_heading"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_points_table_balance_heading"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_points_table_balance_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="WALLET"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_points_table_points_heading"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_points_table_points_heading"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_points_table_points_heading"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_1_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_points_table_name_heading"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_2_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_1_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_1_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_1_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_1_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_1_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_1_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_1_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_1_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_1_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_2_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_1_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_3_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_2_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_2_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_2_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_2_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_2_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_2_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_2_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_2_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_2_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_3_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_2_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_4_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_3_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_3_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_3_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_3_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_3_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_3_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_3_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_3_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_3_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_4_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_3_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_5_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_4_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_4_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_4_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_4_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_4_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_4_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_4_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_4_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_4_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_5_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_4_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_6_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_5_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_5_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_5_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_5_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_5_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_5_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_5_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_5_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_5_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_6_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_5_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_7_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_6_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_6_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_6_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_6_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_6_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_6_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_6_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_6_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_6_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_7_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_6_points_table"
+                    app:layout_constraintBottom_toTopOf="@+id/gam_ov_player_8_points_table"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_7_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_7_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_7_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_7_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_7_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_7_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_7_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_7_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_7_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_8_points_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".65"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gam_ov_player_7_points_table"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:id="@+id/gam_ov_player_8_points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_8_points_table"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_8_points_table"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_8_points_table"
+                    app:layout_constraintEnd_toStartOf="@+id/gam_ov_player_8_balance"/>
+
+                <TextView
+                    android:id="@+id/gam_ov_player_8_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintWidth_percent=".15"
+                    app:layout_constraintTop_toTopOf="@+id/gam_ov_player_8_points"
+                    app:layout_constraintStart_toEndOf="@id/gam_ov_player_8_points"
+                    app:layout_constraintBottom_toBottomOf="@id/gam_ov_player_8_points"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

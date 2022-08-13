@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/dashboard_page"
+    android:layout_height="match_parent"
+    tools:context=".dashboard.dashboard"
+    android:background="@color/blackcurrent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/auction_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/avatar_animation_panel"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintStart_toEndOf="@+id/signout_panel"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/signout_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/auction_title"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/signout_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/logout_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/settings_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".25" />
+
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/settings_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/signout_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/account_button"
+                app:layout_constraintWidth_percent=".25" />
+
+            <ImageButton
+                android:id="@+id/account_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/account_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/settings_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent=".25" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/button_panel_cardview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent=".6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/play_online_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent=".4"
+                android:text="play online"
+                android:textSize="18sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/play_with_frnds_button"
+                app:layout_constraintBottom_toTopOf="@+id/create_room_button"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/play_with_frnds_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="JOIN ROOM"
+                android:textSize="18sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintBottom_toBottomOf="@+id/play_online_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/play_online_button"
+                app:layout_constraintTop_toTopOf="@+id/play_online_button"
+                app:layout_constraintWidth_percent=".4" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/create_room_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="create room"
+                android:textSize="18sp"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/play_online_button"
+                app:layout_constraintStart_toStartOf="@+id/play_online_button"
+                app:layout_constraintTop_toBottomOf="@+id/play_online_button"
+                app:layout_constraintWidth_percent=".4" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/challenges_buttom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent=".4"
+                android:text="challenges"
+                android:textSize="18sp"
+                android:enabled="false"
+                android:background="@drawable/purple_gold_gradient"
+                app:layout_constraintStart_toEndOf="@+id/create_room_button"
+                app:layout_constraintTop_toBottomOf="@+id/play_with_frnds_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_stats_cardview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_panel_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auction_title"
+        app:layout_constraintWidth_percent=".6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/match_played_matches_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:text="Matches"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/match_won_matches_tv"
+                />
+            <TextView
+                android:id="@+id/match_played_played_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Played"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/match_played_matches_tv"
+                app:layout_constraintStart_toStartOf="@+id/match_played_matches_tv"
+                app:layout_constraintEnd_toEndOf="@+id/match_played_matches_tv"
+                />
+
+            <TextView
+                android:id="@+id/match_played_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintHeight_percent=".45"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/match_played_played_tv"
+                app:layout_constraintStart_toStartOf="@+id/match_played_played_tv"
+                app:layout_constraintEnd_toEndOf="@+id/match_played_played_tv"
+                />
+
+            <TextView
+                android:id="@+id/match_won_matches_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:text="Matches"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/match_played_matches_tv"
+                app:layout_constraintEnd_toStartOf="@+id/avg_points_avg_tv"
+                />
+            <TextView
+                android:id="@+id/match_won_won_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Won"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/match_won_matches_tv"
+                app:layout_constraintStart_toStartOf="@+id/match_won_matches_tv"
+                app:layout_constraintEnd_toEndOf="@+id/match_won_matches_tv"
+                />
+
+            <TextView
+                android:id="@+id/match_won_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintHeight_percent=".45"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/match_won_won_tv"
+                app:layout_constraintStart_toStartOf="@+id/match_won_won_tv"
+                app:layout_constraintEnd_toEndOf="@+id/match_won_won_tv"
+                />
+
+            <TextView
+                android:id="@+id/avg_points_avg_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:text="Average"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/match_won_matches_tv"
+                app:layout_constraintEnd_toStartOf="@+id/wallet_balance_wallet_tv"
+                />
+            <TextView
+                android:id="@+id/avg_points_points_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Points"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/avg_points_avg_tv"
+                app:layout_constraintStart_toStartOf="@+id/avg_points_avg_tv"
+                app:layout_constraintEnd_toEndOf="@+id/avg_points_avg_tv"
+                />
+
+            <TextView
+                android:id="@+id/avg_points_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintHeight_percent=".45"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/avg_points_points_tv"
+                app:layout_constraintStart_toStartOf="@+id/avg_points_points_tv"
+                app:layout_constraintEnd_toEndOf="@+id/avg_points_points_tv"
+                />
+
+            <TextView
+                android:id="@+id/wallet_balance_wallet_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:text="Wallet"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/avg_points_avg_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/wallet_balance_balance_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Balance"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/wallet_balance_wallet_tv"
+                app:layout_constraintStart_toStartOf="@+id/wallet_balance_wallet_tv"
+                app:layout_constraintEnd_toEndOf="@+id/wallet_balance_wallet_tv"
+                />
+
+            <TextView
+                android:id="@+id/wallet_balance_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintHeight_percent=".45"
+                app:layout_constraintWidth_percent=".2"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/wallet_balance_balance_tv"
+                app:layout_constraintStart_toStartOf="@+id/wallet_balance_balance_tv"
+                app:layout_constraintEnd_toEndOf="@+id/wallet_balance_balance_tv"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/avatar_animation_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".75"
+        app:layout_constraintStart_toEndOf="@+id/profile_stats_cardview"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_panel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_stats_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_animation_panel">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dash_username"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintWidth_percent=".8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="4dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dash_xp_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintWidth_percent=".15"
+                android:text="XP:"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintTop_toBottomOf="@+id/dash_username"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/dash_username"
+                android:layout_marginStart="-8dp"/>
+
+            <ProgressBar
+                android:id="@+id/dash_xp_pb"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintWidth_percent=".55"
+                app:layout_constraintStart_toEndOf="@+id/dash_xp_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/dash_xp_tv"
+                app:layout_constraintTop_toTopOf="@+id/dash_xp_tv"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/custom_progress_bar"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dash_xp_lvl_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent=".4"
+                android:layout_marginStart="3dp"
+                android:autoSizeTextType="uniform"
+                android:elevation="40dp"
+                android:text="lvl:1"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/dash_xp_pb"
+                app:layout_constraintBottom_toBottomOf="@+id/dash_xp_pb"
+                app:layout_constraintTop_toTopOf="@id/dash_xp_pb"
+                app:layout_constraintEnd_toEndOf="@+id/dash_username"
+                android:layout_marginEnd="-8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

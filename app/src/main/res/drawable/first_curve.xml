@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/gradient_violet"
+                android:endColor="@color/gradient_blue"/>
+            <size android:height="100dp"
+                android:width="300dp"/>
+        </shape>
+    </item>
+    <item android:top="0dp" android:left="-05dp" android:right="-20dp" android:bottom="-80dp">
+        <shape android:shape="oval">
+            <gradient android:endColor="@color/gradient_blue"
+                android:startColor="@color/gradient_violet"/>
+        </shape>
+    </item>
+</layer-list>

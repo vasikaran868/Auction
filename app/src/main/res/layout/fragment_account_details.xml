@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashboard.account_details">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:backgroundTint="@color/dark_blue"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/acc_details_title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent=".7"
+                app:layout_constraintHeight_percent=".15"
+                android:text="Account Details"
+                android:textColor="@color/white"
+                android:autoSizeTextType="uniform"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="6dp"
+                />
+
+            <TextView
+                android:id="@+id/acc_det_username_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="USERNAME:"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintHeight_percent=".15"
+                app:layout_constraintTop_toBottomOf="@id/acc_details_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_username"
+                app:layout_constraintBottom_toTopOf="@+id/acc_det_password_title"/>
+
+            <TextView
+                android:id="@+id/acc_det_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintWidth_percent=".4"
+                app:layout_constraintTop_toTopOf="@id/acc_det_username_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_username_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_username_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_username_change_but"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/acc_det_username_et_box"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="@id/acc_det_username_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_username_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_username_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_username_change_but"
+                app:layout_constraintWidth_percent=".4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/acc_det_username_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="username" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/acc_det_username_change_but"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="change"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/acc_det_username"
+                app:layout_constraintTop_toTopOf="@+id/acc_det_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_username"
+                 />
+
+            <TextView
+                android:id="@+id/acc_det_password_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PASSWORD:"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintHeight_percent=".15"
+                app:layout_constraintTop_toBottomOf="@id/acc_det_username_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_username"
+                app:layout_constraintBottom_toTopOf="@+id/acc_det_email_title"/>
+
+            <TextView
+                android:id="@+id/acc_det_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintWidth_percent=".4"
+                app:layout_constraintTop_toTopOf="@id/acc_det_password_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_password_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_password_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_password_change_but"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/acc_det_password_et_box"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent=".4"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="@id/acc_det_password_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_password_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_password_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_password_change_but">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/acc_det_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="password" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/acc_det_password_change_but"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="change"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/acc_det_password"
+                app:layout_constraintTop_toTopOf="@+id/acc_det_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_password"
+                />
+
+            <TextView
+                android:id="@+id/acc_det_email_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="EMAIL:"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintWidth_percent=".2"
+                app:layout_constraintHeight_percent=".15"
+                app:layout_constraintTop_toBottomOf="@id/acc_det_password_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_username"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/acc_det_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintWidth_percent=".4"
+                app:layout_constraintTop_toTopOf="@id/acc_det_email_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_email_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_email_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_email_change_but"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/acc_det_email_et_box"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent=".4"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="@id/acc_det_email_title"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_email_title"
+                app:layout_constraintStart_toEndOf="@id/acc_det_email_title"
+                app:layout_constraintEnd_toStartOf="@+id/acc_det_email_change_but">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/acc_det_email_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="password" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/acc_det_email_change_but"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="change"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/acc_det_email"
+                app:layout_constraintTop_toTopOf="@+id/acc_det_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_det_email"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
