@@ -1,21 +1,4 @@
-package com.example.auction
 
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.example.auction.data.Logindatapreference
-import com.example.auction.databinding.FragmentLoadingBinding
-import com.example.auction.databinding.FragmentLoginFragmentBinding
 import com.example.auction.login.login_fragmentDirections
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Delay
