@@ -32,7 +32,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="6dp"
                 android:layout_marginEnd="6dp"
-                android:textColor="@color/white"
+                android:textColor="?colorOnSecondary"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/remove_button"

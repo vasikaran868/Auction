@@ -18,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.auction.*
 import com.example.auction.databinding.FragmentGamePageBinding
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -51,7 +52,6 @@ class game_page : Fragment() {
     var cbidder_image_views = mutableMapOf<String,ImageView>()
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -71,6 +71,7 @@ class game_page : Fragment() {
         gameviewmodel.update_players_list(viewModel.players_list)
         gameviewmodel.update_start_time(OffsetDateTime.parse(viewModel.game_start_sec))
         gameviewmodel.server_client_mili_difference = viewModel.server_client_mili_diff
+        var current_image_view = "1"
         val bid_timer_tv = binding.timer
         val starts_in_timer_tv = binding.startsInTimer
         val batsmen_list= mutableListOf<String>()
@@ -107,6 +108,8 @@ class game_page : Fragment() {
         ball_adapter.submitList(bowlers_list)
         all_adapter.submitList(allrounder_list)
         wk_adapter.submitList(keeper_list)
+        Picasso.get().load(viewModel.players_image_uri_map[gameviewmodel.players_list[gameviewmodel.player_no]["image_uri_key"]]).into(binding.playerImage)
+        //Picasso.get().load(gameviewmodel.players_list[gameviewmodel.player_no + 1]["image_uri_key"]).into(binding.playerImage)
         gameviewmodel.game_start_timer_milis.observe(viewLifecycleOwner,{
             starts_in_timer_tv.text = it
         })
@@ -116,6 +119,7 @@ class game_page : Fragment() {
                 binding.darkBgLayout.visibility = View.GONE
                 start_game()
                 viewModel.current_user.match_played += 1
+                binding.playerImage.visibility = View.VISIBLE
             }
         })
         gameviewmodel.bid_timer_milis_left.observe(viewLifecycleOwner,{
@@ -135,7 +139,24 @@ class game_page : Fragment() {
                 currentBid.text = "-"
                 bidButton.isEnabled = true
             }
+            if (current_image_view == "1"){
+                Log.v("MyActivity","loading uri to image view2 ...${viewModel.players_image_uri_map[gameviewmodel.players_list[gameviewmodel.player_no + 1]["image_uri_key"]]}")
+                if (gameviewmodel.player_no +1 < gameviewmodel.players_list.size){
+                    Picasso.get().load(viewModel.players_image_uri_map[gameviewmodel.players_list[gameviewmodel.player_no + 1]["image_uri_key"]]).into(binding.playerImage2)
 
+                }
+                binding.playerImage.visibility = View.VISIBLE
+                binding.playerImage2.visibility = View.INVISIBLE
+                current_image_view = "2"
+            }
+            else if (current_image_view == "2"){
+                if (gameviewmodel.player_no +1 < gameviewmodel.players_list.size){
+                    Picasso.get().load(viewModel.players_image_uri_map[gameviewmodel.players_list[gameviewmodel.player_no + 1]["image_uri_key"]]).into(binding.playerImage)
+                }
+                binding.playerImage2.visibility = View.VISIBLE
+                binding.playerImage.visibility = View.INVISIBLE
+                current_image_view = "1"
+            }
         })
         gameviewmodel.game_start_timer_page()
 
@@ -217,7 +238,7 @@ class game_page : Fragment() {
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 val back_dialog_frag = back_pressed_dialog("Do you want to exit and go to dashboard?","EXIT"){
-                    val mess = mapOf("REQUEST" to "bidded","USERNAME" to viewModel.current_user.username)
+                    val mess = mapOf("REQUEST" to "LEAVE_GAME","USERNAME" to viewModel.current_user.username,"ROOM_NO" to viewModel.room_no)
                     val en_mess = Json.encodeToString(mess)
                     viewModel.send_udp_server(en_mess)
                     val msg = "19 ${viewModel.current_user.username} ${viewModel.current_user.xp} ${viewModel.current_user.match_played} ${viewModel.current_user.match_won} ${viewModel.current_user.avg_points}"
@@ -385,18 +406,25 @@ class game_page : Fragment() {
                 game_over_points_table_balance_views[i].background = resources.getDrawable(R.drawable.disqualified_textview)
             }
         }
+        game_over_points_table_name_views[0].background = resources.getDrawable(R.drawable.winner_textview)
+        game_over_points_table_points_views[0].background = resources.getDrawable(R.drawable.winner_textview)
+        game_over_points_table_balance_views[0].background = resources.getDrawable(R.drawable.winner_textview)
         binding.gameOverRoomNo.text = "Room no. ${viewModel.room_no}"
         binding.darkBgLayout.visibility = View.VISIBLE
         binding.gameOverLayout.visibility = View.VISIBLE
         viewModel.current_user.xp += 10
-        val cur_tot_ponts = viewModel.current_user.avg_points * (viewModel.current_user.match_played-1)
+        val cur_tot_ponts = viewModel.current_user.avg_points * (viewModel.current_user.match_played-1) + gameviewmodel.each_members_points[viewModel.current_user.username]!!
         viewModel.current_user.avg_points = cur_tot_ponts / viewModel.current_user.match_played
         if (gameviewmodel.points_table_list[0] == viewModel.current_user.username && gameviewmodel.each_members_is_qualified[viewModel.current_user.username]==true){
             viewModel.current_user.match_won +=1
+            viewModel.current_user.xp +=10
         }
         val msg = "19 ${viewModel.current_user.username} ${viewModel.current_user.xp} ${viewModel.current_user.match_played} ${viewModel.current_user.match_won} ${viewModel.current_user.avg_points}"
         viewModel.send_to_Server(msg)
     }
+
+
+
 
 
     fun split_to_list(text:String):List<String> = text.trim().split("\\s+".toRegex())

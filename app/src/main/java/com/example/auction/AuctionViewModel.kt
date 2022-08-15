@@ -64,6 +64,8 @@ class AuctionViewModel(private val userDao:UserDao):ViewModel(){
 
     lateinit var datastore :Logindatapreference
 
+    val players_image_uri_map = mutableMapOf<String,String>()
+
 
     init {
         Log.v("MyActivity","viewmodel initialised")
@@ -83,6 +85,7 @@ class AuctionViewModel(private val userDao:UserDao):ViewModel(){
         game_start_sec = ""
         players_list.clear()
         temp_players_list.clear()
+        players_image_uri_map.clear()
     }
 
     fun initialise_data_store(context: Context){
@@ -98,12 +101,13 @@ class AuctionViewModel(private val userDao:UserDao):ViewModel(){
     }
 
     fun send_to_Server(msg:String) {
-        if (socketdatasource_object.is_websocket_active() == true){
+        if (socketdatasource_object.is_websocket_active() == true && socketdatasource_object.is_network_call_in_progress == false){
             viewModelScope.launch {
                 socketdatasource_object.send_message(msg)
+                socketdatasource_object.is_network_call_in_progress = true
             }
         }
-        else{
+        else if (socketdatasource_object.is_websocket_active() == false){
             is_websocket_disconnected.value = true
             msg_yet_to_be_sent = msg
             connect_to_server()
@@ -113,7 +117,7 @@ class AuctionViewModel(private val userDao:UserDao):ViewModel(){
     fun split_players_details(){
        for(player in temp_players_list){
            val temp_details = split_to_list(player)
-           val players_details = mapOf<String,String>("name" to "${temp_details[0]} ${temp_details[1]}","role" to temp_details[2],"base" to temp_details[3],"points" to temp_details[4],"ind/for" to temp_details[5])
+           val players_details = mapOf<String,String>("name" to "${temp_details[0]} ${temp_details[1]}","role" to temp_details[2],"base" to temp_details[3],"points" to temp_details[4],"ind/for" to temp_details[5],"image_uri_key" to "${temp_details[0]}_${temp_details[1]}")
            players_list.add(players_details)
        }
     }
@@ -138,11 +142,15 @@ class AuctionViewModel(private val userDao:UserDao):ViewModel(){
             Log.v("MyActivity","result= $result")
             if (result=="success"){
                 is_connected_to_server.value=true
+                if (is_websocket_disconnected.value == true){
+                    send_to_Server("20 ${current_user.username}")
+                }
                 is_websocket_disconnected.value = false
                 viewModelScope.launch {
                     socketdatasource_object.observe_message().collect(){
                         Log.v("MyActivity","$it")
                         _shared_msg.emit(it)
+                        socketdatasource_object.is_network_call_in_progress = false
                     }
                 }
                 if (msg_yet_to_be_sent != null){

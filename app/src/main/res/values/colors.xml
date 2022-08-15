@@ -9,13 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="logo_bg">#193888</color>
     <color name="gradient_blue">#951EEA</color>
-    <color name="gradient_violet">#5600E9</color>
     <color name="transparent_black">#CC000000</color>
     <color name="orange">#FF6600</color>
     <color name="dim_orange">#A54302</color>
     <color name="dark_blue">#181627</color>
     <color name="blackcurrent">#634F91</color>
     <color name="gradient_pink">#C24B8A</color>
-    <color name="gradient_violent">#A102DC</color>
+    <color name="gradient_violet">#A102DC</color>
     <color name="gradient_gold">#FAAB1B</color>
+    <color name="grey_white">#EEEEEE</color>
+    <color name="grey">#504E4E</color>
+    <color name="green">#03C603</color>
 </resources>

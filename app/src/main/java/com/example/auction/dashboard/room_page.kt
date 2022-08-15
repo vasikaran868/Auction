@@ -152,6 +152,11 @@ class room_page : Fragment() {
                     else if (params[0] =="players:"){
                         viewModel.temp_players_list = it.removePrefix("players: [").removeSuffix("]").split(",").toMutableList()
                     }
+                    else if(params[0] =="players_image_list:"){
+                        for (i in 1..(params.size -1) step 2){
+                            viewModel.players_image_uri_map[params[i]] = params[i+1]
+                        }
+                    }
                     else if(params[0] =="game_start:"){
                         val time_diff_msg = "11"
                         start_msg_time= OffsetDateTime.now(ZoneOffset.UTC)
@@ -202,7 +207,6 @@ class room_page : Fragment() {
         super.onDestroy()
         viewModel.is_collector_initialised["room"]=false
         Log.v("MyActivity","room fragment destroyed")
-        viewModel.reset_room_details()
     }
 
 

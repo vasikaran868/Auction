@@ -38,5 +38,8 @@ class back_pressed_dialog(text_string:String,button_string:String,private val ba
         binding.backButtonDialog.setOnClickListener {
             back_button_pressed()
         }
+        binding.cancelButtonDialog.setOnClickListener {
+            dismiss()
+        }
     }
 }

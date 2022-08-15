@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/loading_page"
     tools:context=".loading"
-    android:background="@drawable/loading_background">
+    android:background ="@drawable/loading_background">
 
 
 

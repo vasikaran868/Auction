@@ -30,6 +30,7 @@
         <entry key="..\:/Users/algo/AndroidStudioProjects/Auction/app/src/main/res/layout/room_member.xml" value="0.25" />
         <entry key="..\:/Users/algo/AndroidStudioProjects/Auction/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1795" />
         <entry key="..\:/Users/algo/AndroidStudioProjects/Auction/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1795" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/account_icon.xml" value="0.2235" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/blue_violet_gradient.xml" value="0.2545" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/buttons_layout_blue_curve.xml" value="0.2545" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/curve_corner.xml" value="0.2545" />
@@ -37,13 +38,18 @@
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/disqualified_textview.xml" value="0.2205" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/first_curve.xml" value="0.2545" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/hammer.xml" value="0.2545" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/join_room.xml" value="0.2235" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/lightblue_darkblue_gradient.xml" value="0.2545" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/logout_icon.xml" value="0.2235" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/person.xml" value="0.2235" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/purple_gold_gradient.xml" value="0.177" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/qualified_textview.xml" value="0.2205" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/remove_member.xml" value="0.1935" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/settings_icon.xml" value="0.2235" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/signup_curve.xml" value="0.2555" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/splash_screen.xml" value="0.2545" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/white_bordered_curve.xml" value="0.205" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/drawable/winner_textview.xml" value="0.2235" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_account_details.xml" value="0.25" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_back_pressed_dialog.xml" value="0.25" />
@@ -56,7 +62,7 @@
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_loading.xml" value="0.2" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_login_fragment.xml" value="0.25" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_play_with_friends.xml" value="0.25" />
-        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_public_rooms.xml" value="0.25" />
+        <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_public_rooms.xml" value="0.2" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_room_page.xml" value="0.2" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/fragment_signup_page.xml" value="0.25" />
         <entry key="..\:/Users/algo/Documents/auction new/Auction/app/src/main/res/layout/player_viewholder.xml" value="0.25" />

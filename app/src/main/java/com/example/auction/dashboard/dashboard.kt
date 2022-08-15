@@ -36,6 +36,7 @@ class dashboard : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.v("MyActivity","dashboard frag created")
+        Log.v("MyActivity","${findNavController().backQueue}")
     }
 
 
@@ -49,6 +50,7 @@ class dashboard : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.reset_room_details()
         if (viewModel.is_collector_initialised["dashboard"]==false){
             lifecycleScope.launch {
                 viewModel.is_collector_initialised["dashboard"]= true
@@ -61,6 +63,8 @@ class dashboard : Fragment() {
                     else if (params[0]=="createdroom"){
                         viewModel.room_no= params[1]
                         viewModel.room_members.add(viewModel.current_user.username)
+                        Log.v("MyActivity","members:  ${viewModel.room_members}")
+                        Log.v("MyActivity","members:  ${viewModel.room_members.size}")
                         val action = dashboardDirections.actionDashboardToRoomPage("private")
                         activity?.findNavController(R.id.dashboard_page)?.navigate(action)
                     }
@@ -110,7 +114,7 @@ class dashboard : Fragment() {
         binding.apply {
             matchPlayedTv.text = viewModel.current_user.match_played.toString()
             matchWonTv.text = viewModel.current_user.match_won.toString()
-            avgPointsTv.text = viewModel.current_user.avg_points.toString()
+            avgPointsTv.text = String.format("%.1f",viewModel.current_user.avg_points)
             dashUsername.text = viewModel.current_user.username
             dashXpLvlTv.text = "lvl.${(viewModel.current_user.xp/100).toInt()+1}"
             dashXpPb.max = 100
@@ -145,7 +149,7 @@ class dashboard : Fragment() {
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 val back_dialog_frag = back_pressed_dialog("Do you want to exit the game?","EXIT"){
-                    findNavController().navigateUp()
+                    activity?.finish()
                 }
                 back_dialog_frag.show(childFragmentManager,"back_dialog_fragment")
             }

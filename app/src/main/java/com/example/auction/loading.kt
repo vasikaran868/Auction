@@ -76,7 +76,7 @@ class loading : Fragment() {
                                 val action=loadingDirections.actionLoadingToDashboard()
                                 activity?.findNavController(R.id.loading_page)?.navigate(action)
                             }
-                            else if (params[0] == "password_incorrect"){
+                            else{
                                 val action = loadingDirections.actionLoadingToLoginFragment()
                                 activity?.findNavController(R.id.loading_page)?.navigate(action)
                             }

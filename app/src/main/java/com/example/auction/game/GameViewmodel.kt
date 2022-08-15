@@ -50,7 +50,6 @@ class GameViewmodel(){
     var game_members = mutableListOf<String>()
     var points_table_list = mutableListOf<String>()
 
-
     fun initialise_role_req(){
         role_req["BAT"] = 0
         role_req["BOWL"] = 0

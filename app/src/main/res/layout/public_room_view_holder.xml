@@ -56,7 +56,7 @@
                 android:layout_margin="6dp"
                 android:src="@drawable/join_room"
                 android:scaleType="centerCrop"
-                android:background="@color/dark_blue"
+                android:background="?backgroundColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -27,6 +27,8 @@ class SocketDataSourceImpl(
 
     val udp_flow = MutableSharedFlow<String>()
 
+    var is_network_call_in_progress = false
+
 
     init {
         Log.v("MyActivity","${udp_socket.localSocketAddress}")
